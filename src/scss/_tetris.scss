@@ -1,0 +1,274 @@
+@mixin center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.tetris__wrap {
+    @include center;
+    z-index: 3;
+    background-image: url(../images/desktop-wallpaper-pixel-computer-rain-live-gif.jpg);
+    background-size: cover;
+    background-position: center center;
+    width: 500px;
+    height: 700px;
+    border-radius: 20px;
+    // position: relative;
+}
+.tetris__wrap .tetris__text {
+    padding-top: 40px;
+    font-size: 26px;
+    text-align: center;
+    color: #0065bd;
+    font-weight: bold;
+}
+.tetris__wrap .tetris__score {
+    font-size: 30px;
+    text-align: center;
+    padding: 50px 0 0 0;
+    color: #3753cf;
+}
+.tetris__play {
+    .view {
+        > ul {
+            border: 2px solid #000;
+            margin: 50px auto;
+            width: 300px;
+
+            > li {
+                width: 100%;
+                height: 25px;
+
+                > ul {
+                    display: flex;
+
+                    > li {
+                        width: 25px;
+                        height: 25px;
+                        outline: 0.25px solid #33acbf;
+                        box-shadow: 2px 3px 5px 0px rgb(126, 126, 142);
+                    }
+                }
+            }
+        }
+    }
+    .Tmino {
+        background-color: #952d98;
+    }
+}
+.startButton__wrap {
+    width: 500px;
+    height: 700px;
+    border-radius: 20px;
+    background-image: url(../images/tetrisStartImg.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.startButton {
+    font-size: 40px;
+    color: #fff;
+    text-align: center;
+    line-height: 700px;
+}
+.startButton:hover {
+    transition: all 1s ease;
+    background-color: rgba(13, 69, 160, 0.3);
+}
+.tetris__wrap.show {
+    position: relative;
+    display: block;
+}
+.tetris__start {
+    display: none;
+    width: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 10;
+    transform: translate(-50%, -50%);
+    background: #0009;
+    text-align: center;
+    padding: 20px;
+    border-radius: 5px;
+    border: 3px solid rgb(62 94 255);
+    animation: flicker 0.5s infinite alternate;
+}
+.tetris__start.show {
+    display: block;
+}
+.tetris__start .desc {
+    color: #fff;
+}
+.Tmino {
+    border: 6px outset #d859da !important;
+    background-color: #952d98;
+}
+.Imino {
+    border: 6px outset #1ec3ff !important;
+    background-color: #009fda;
+}
+.Omino {
+    border: 6px outset #ffe476 !important;
+    background-color: #fecb00;
+}
+.Zmino {
+    border: 6px outset #ff6471 !important;
+    background-color: #ed2939;
+}
+.Smino {
+    border: 6px outset #a5ff60 !important;
+    background-color: #69be28;
+}
+.Jmino {
+    border: 6px outset #3ca2fb !important;
+    background-color: #0065bd;
+}
+.Lmino {
+    border: 6px outset #fea75c !important;
+    background-color: #ff7900;
+}
+
+//컵
+.cup__wrap {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 88px;
+    left: 150px;
+}
+.coaster {
+    position: absolute;
+    width: 36px;
+    height: 3px;
+    background-color: #0e0b62;
+    border-radius: 50%/100%;
+    bottom: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: black 2px 0.5;
+}
+
+.body-cup {
+    position: absolute;
+    width: 23px;
+    height: 30px;
+    background: #426ef5;
+    bottom: 55%;
+    border-radius: 10% 10% 2% 2%;
+}
+
+.cup-shine {
+    position: absolute;
+    bottom: 2px;
+    border-top: 27px solid #426ef5;
+    border-right: 22px solid transparent;
+}
+
+.top-cup {
+    position: absolute;
+    width: 23px;
+    height: 4px;
+    background-color: #53b9dc;
+    bottom: 88%;
+    border-radius: 50%/100%;
+}
+
+.handel {
+    position: absolute;
+    width: 15px;
+    height: 16px;
+    background: #426ef5;
+    border-radius: 50%;
+    bottom: 2%;
+    right: -5px;
+    bottom: 7px;
+}
+
+.handel-space {
+    position: absolute;
+    width: 8px;
+    height: 10px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    bottom: 2%;
+    right: 3px;
+    bottom: 3px;
+}
+
+.eyes {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background-color: black;
+    border-radius: 50%;
+    bottom: 8px;
+    right: 5px;
+    box-shadow: -6px 0 black;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0% {
+        transform: scale(1, 0.1);
+    }
+    100% {
+        transform: scale(1, 1);
+    }
+}
+
+.cheeks {
+    position: absolute;
+    width: 5px;
+    height: 3px;
+    bottom: 6px;
+    right: 3px;
+    background-color: red;
+    opacity: 20%;
+    border-radius: 50%;
+    box-shadow: -9px 0 rgb(189 36 36);
+}
+
+.vapours {
+    position: relative;
+    display: flex;
+    z-index: 1;
+}
+
+.vapours span {
+    position: relative;
+    display: block;
+    height: 22px;
+    background-color: aliceblue;
+    min-width: 1px;
+    bottom: 18px;
+    margin: 0 6px 100px;
+    border-radius: 50%;
+    animation: animate 5s linear infinite;
+    opacity: 0;
+    filter: blur(4px);
+    animation-delay: calc(var(--v) * -0.5s);
+}
+
+@keyframes animate {
+    0% {
+        transform: translateY(0) scaleX(1);
+    }
+    15% {
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-50px) scaleX(2);
+    }
+    95% {
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(-100px) scaleX(3);
+    }
+}
